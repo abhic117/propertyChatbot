@@ -18,6 +18,7 @@ def load_data():
 def prepare_dataframe(df):
     df = df.copy()
     df["search_text"] = (
+        df["council_name"].astype(str) + " " +
         df["purchase_price"].astype(str) + " " +
         df["address"].astype(str)
     ).str.lower()
@@ -25,23 +26,15 @@ def prepare_dataframe(df):
 
 df = prepare_dataframe(load_data())
 
-def retrieve_relevant_rows(question, df, max_rows=3):
-    # keywords = question.lower().split()
-    
-    # mask = df.apply(
-    #     lambda row: any(
-    #         kw in " ".join(row.astype(str)).lower() for kw in keywords
-    #     ),
-    #     axis=1
-    # )
+def retrieve_relevant_rows(question, df, max_rows=5):
+    noise_words = {'what', 'the', 'is', 'in'}
 
-    # results = df[mask].head(max_rows)
-    # return results
     keywords = question.lower().split()
     mask = pd.Series(False, index=df.index)
 
     for kw in keywords:
-        mask |= df["search_text"].str.contains(kw, na=False)
+        if kw not in noise_words:
+            mask |= df["search_text"].str.contains(kw, na=False)
 
     return df.loc[mask].head(max_rows)
 
@@ -79,10 +72,9 @@ if prompt:
         context = rows.to_string(index=False)
 
         llm_prompt = f"""
-        You are a data assistant.
+        You are a real estate chatbot helping a user with property related questions.
 
-        Answer ONLY using the dataset below.
-        If the answer is not in the dataset, say you cannot find it.
+        You will answer the user's questions using the dataset provided, performing data analysis on it to output data summaries. Do not speak in any jargon, instead present the findings in a simple manner, outputting only the relevant information to the user.
 
         DATA:
         {context}
@@ -92,7 +84,7 @@ if prompt:
         """
 
         result = ollama.chat(
-            model="tinyllama",
+            model="llama3",
             messages=[{"role": "user", "content": llm_prompt}]
         )
 
