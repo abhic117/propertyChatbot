@@ -2,29 +2,36 @@ import streamlit as st
 import ollama
 import time
 import pandas as pd
+import os
 import kaggle
 
-# kaggle.api.authenticate()
-# kaggle.api.dataset_download_files(
-#     'josephcheng123456/nsw-australia-property-data',
-#     path='.',
-#     unzip=True
-# )
+RAW_FILE = "nsw_property_data.csv"
+PROCESSED_FILE = "processed_nsw_property_data.parquet"
 
-def load_data():
-    return pd.read_csv("nsw_property_data.csv")
+def preprocess_data():
+    kaggle.api.dataset_download_files(
+    'josephcheng123456/nsw-australia-property-data',
+    path='.',
+    unzip=True
+    )
+    
+    df = pd.read_csv(RAW_FILE)
 
-@st.cache_data
-def prepare_dataframe(df):
-    df = df.copy()
     df["search_text"] = (
         df["council_name"].astype(str) + " " +
         df["purchase_price"].astype(str) + " " +
         df["address"].astype(str)
     ).str.lower()
-    return df
 
-df = prepare_dataframe(load_data())
+    df.to_parquet(PROCESSED_FILE)
+
+
+def load_data():
+    if not os.path.exists(PROCESSED_FILE):
+        preprocess_data()
+    return pd.read_parquet(PROCESSED_FILE)
+
+df = load_data()
 
 def retrieve_relevant_rows(question, df, max_rows=5):
     noise_words = {'what', 'the', 'is', 'in', 'of', 'at'}
@@ -94,7 +101,7 @@ if prompt:
         """
 
         result = ollama.chat(
-            model="llama3",
+            model="qwen2.5:7b-instruct-q4_K_M",
             messages=[{"role": "user", "content": llm_prompt}]
         )
 
