@@ -73,16 +73,3 @@ def amenities_to_text(summary):
     - {summary['cafes']} cafes
     - {summary['parks']} parks
     """
-
-lat, lon = query_coords('30 WESTWARD AVE', '2770')
-
-print(lat, lon)
-
-try:
-    overpass_data = query_overpass(lat, lon)
-except:
-    overpass_data = query_overpass(lat, lon)
-print(json.dumps(overpass_data, indent=4))
-
-summary = summarise_amenities(overpass_data)
-print(amenities_to_text(summary))

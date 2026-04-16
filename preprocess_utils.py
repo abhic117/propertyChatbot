@@ -21,7 +21,7 @@ def preprocess_data(raw_file, processed_file):
     df.to_parquet(processed_file)
 
 # Download data only if it does not already exist
-def load_data(processed_file):
+def load_data(raw_file, processed_file):
     if not os.path.exists(processed_file):
-        preprocess_data()
+        preprocess_data(raw_file, processed_file)
     return pd.read_parquet(processed_file)
