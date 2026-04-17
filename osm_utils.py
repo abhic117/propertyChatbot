@@ -29,8 +29,11 @@ def query_overpass(lat, lon, radius=5000):
     query = f"""
     [out:json];
     (
-      node
-      ["amenity"="school"](around:{radius},{lat},{lon});
+      node["amenity"="school"](around:{radius},{lat},{lon});
+      node["shop"="supermarket"](around:{radius},{lat},{lon});
+      node["railway"="station"](around:{radius},{lat},{lon});
+      node["amenity"="cafe"](around:{radius},{lat},{lon});
+      node["leisure"="park"](around:{radius},{lat},{lon});
     );
     out;
     """
@@ -38,6 +41,14 @@ def query_overpass(lat, lon, radius=5000):
     response = requests.get(overpass_url, params={"data": query})
 
     return response.json()
+
+def get_amenity_count(data):
+    count = 0
+
+    for element in data.get("elements", []):
+        count += 1
+        
+    return count
 
 def summarise_amenities(data):
     summary = {
@@ -73,3 +84,10 @@ def amenities_to_text(summary):
     - {summary['cafes']} cafes
     - {summary['parks']} parks
     """
+
+def get_amenity_score(address, postcode):
+    lat, lon = query_coords(address, postcode)
+
+    overpass_data = query_overpass(lat, lon)
+
+    return get_amenity_count(overpass_data)

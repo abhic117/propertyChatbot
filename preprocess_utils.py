@@ -18,6 +18,8 @@ def preprocess_data(raw_file, processed_file):
         df["address"].astype(str)
     ).str.lower()
 
+    df = df[['council_name', 'purchase_price', 'address', 'post_code', 'search_text']]
+
     df.to_parquet(processed_file)
 
 # Download data only if it does not already exist

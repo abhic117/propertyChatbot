@@ -27,22 +27,32 @@ if prompt:
 
     # Processing
     with st.spinner("Thinking..."):
-        rows = retrieval_utils.retrieve_relevant_rows(prompt, df)
-        rows = rows[['purchase_price', 'address', 'post_code']].head(1)
+        query_intent = retrieval_utils.detect_intent(prompt)
 
-        address = rows.iloc[0]["address"]
-        postcode = rows.iloc[0]["post_code"]
-        lat, lon = osm_utils.query_coords(address, postcode)
+        match query_intent:
+            case 'price': 
+                rows = retrieval_utils.price_query_retrieval(prompt, df)
+            case 'amenity':
+                rows = retrieval_utils.amenity_query_retrieval(prompt, df)
 
-        try:
-            overpass_data = osm_utils.query_overpass(lat, lon)
-        except:
-            overpass_data = osm_utils.query_overpass(lat, lon)
-
-        summary = osm_utils.summarise_amenities(overpass_data)
-        ammenities_text = osm_utils.amenities_to_text(summary)
-        
         context = rows.to_string(index=False)
+        
+        # rows = rows[['purchase_price', 'address', 'post_code']].head(1)
+
+        # address = rows.iloc[0]["address"]
+        # postcode = rows.iloc[0]["post_code"]
+
+        # lat, lon = osm_utils.query_coords(address, postcode)
+
+        # try:
+        #     overpass_data = osm_utils.query_overpass(lat, lon)
+        # except:
+        #     overpass_data = osm_utils.query_overpass(lat, lon)
+
+        # summary = osm_utils.summarise_amenities(overpass_data)
+        # ammenities_text = osm_utils.amenities_to_text(summary)
+
+
 
         llm_prompt = f"""
         You are a real estate assistant helping a user with property related questions.
@@ -51,8 +61,6 @@ if prompt:
 
         DATA:
         {context}
-
-        {ammenities_text}
 
         QUESTION:
         {prompt}
