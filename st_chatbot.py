@@ -27,6 +27,7 @@ if prompt:
 
     # Processing
     with st.spinner("Thinking..."):
+        amenities_text = ''
         query_intent = retrieval_utils.detect_intent(prompt)
 
         match query_intent:
@@ -35,24 +36,9 @@ if prompt:
             case 'amenity':
                 rows = retrieval_utils.amenity_query_retrieval(prompt, df)
 
+                amenities_text = rows.iloc[0]["amenities_text"]
+
         context = rows.to_string(index=False)
-        
-        # rows = rows[['purchase_price', 'address', 'post_code']].head(1)
-
-        # address = rows.iloc[0]["address"]
-        # postcode = rows.iloc[0]["post_code"]
-
-        # lat, lon = osm_utils.query_coords(address, postcode)
-
-        # try:
-        #     overpass_data = osm_utils.query_overpass(lat, lon)
-        # except:
-        #     overpass_data = osm_utils.query_overpass(lat, lon)
-
-        # summary = osm_utils.summarise_amenities(overpass_data)
-        # ammenities_text = osm_utils.amenities_to_text(summary)
-
-
 
         llm_prompt = f"""
         You are a real estate assistant helping a user with property related questions.
@@ -61,6 +47,8 @@ if prompt:
 
         DATA:
         {context}
+
+        {amenities_text}
 
         QUESTION:
         {prompt}

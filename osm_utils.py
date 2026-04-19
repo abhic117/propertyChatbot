@@ -1,12 +1,12 @@
 import requests
 import json
 
+# Returns latitude and longitude coordinates of given address
 def query_coords(address, postcode):
     url = "https://nominatim.openstreetmap.org/search"
     
     params = {
-        "street": address,
-        "postalcode": postcode,
+        "q": f"{address}, {postcode}",
         "format": "json",
         "limit": 1
     }
@@ -23,6 +23,7 @@ def query_coords(address, postcode):
 
     return float(data[0]["lat"]), float(data[0]["lon"])
 
+# Queries overpass api to return json response containing nearby amenity data
 def query_overpass(lat, lon, radius=5000):
     overpass_url = "https://overpass-api.de/api/interpreter"
 
@@ -42,14 +43,7 @@ def query_overpass(lat, lon, radius=5000):
 
     return response.json()
 
-def get_amenity_count(data):
-    count = 0
-
-    for element in data.get("elements", []):
-        count += 1
-        
-    return count
-
+# Summarises json response
 def summarise_amenities(data):
     summary = {
         "schools": 0,
@@ -75,6 +69,7 @@ def summarise_amenities(data):
 
     return summary
 
+# Parses json data into readable text
 def amenities_to_text(summary):
     return f"""
     Nearby amenities:
@@ -85,9 +80,33 @@ def amenities_to_text(summary):
     - {summary['parks']} parks
     """
 
+# Returns sum of total nearby amenities for given address
 def get_amenity_score(address, postcode):
+    amenity_count = 0
     lat, lon = query_coords(address, postcode)
 
     overpass_data = query_overpass(lat, lon)
 
-    return get_amenity_count(overpass_data)
+    for element in overpass_data.get("elements", []):
+        amenity_count += 1
+
+    return amenity_count
+
+# Returns parsed amenity summary text for given address
+def get_amenity_text(address, postcode):
+    print(address, postcode)
+    lat, lon = query_coords(address, postcode)
+
+    print(lat, lon)
+
+    try:
+        overpass_data = query_overpass(lat, lon)
+    except:
+        overpass_data = query_overpass(lat, lon)
+
+    summary = summarise_amenities(overpass_data)
+    ammenities_text = amenities_to_text(summary)
+
+    print(ammenities_text)
+
+    return ammenities_text
