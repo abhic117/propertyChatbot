@@ -1,0 +1,562 @@
+{
+    "2768.0": {
+        "coordinates": {
+            "lat": -33.7171563,
+            "lon": 150.930429
+        },
+        "amenities": {
+            "schools": 4,
+            "supermarkets": 20,
+            "stations": 2,
+            "cafes": 33,
+            "parks": 2
+        },
+        "amenity_score": 12.200000000000001
+    },
+    "2763.0": {
+        "coordinates": {
+            "lat": -33.7283442,
+            "lon": 150.8973933
+        },
+        "amenities": {
+            "schools": 4,
+            "supermarkets": 22,
+            "stations": 5,
+            "cafes": 36,
+            "parks": 2
+        },
+        "amenity_score": 13.8
+    },
+    "2769.0": {
+        "coordinates": {
+            "lat": -33.7059635,
+            "lon": 150.9022465
+        },
+        "amenities": {
+            "schools": 2,
+            "supermarkets": 17,
+            "stations": 4,
+            "cafes": 26,
+            "parks": 3
+        },
+        "amenity_score": 10.4
+    },
+    "2765.0": {
+        "coordinates": {
+            "lat": -33.6966444,
+            "lon": 150.8184119
+        },
+        "amenities": {
+            "schools": 1,
+            "supermarkets": 5,
+            "stations": 1,
+            "cafes": 4,
+            "parks": 4
+        },
+        "amenity_score": 3.0
+    },
+    "2148.0": {
+        "coordinates": {
+            "lat": -33.752129,
+            "lon": 150.8926028
+        },
+        "amenities": {
+            "schools": 6,
+            "supermarkets": 20,
+            "stations": 6,
+            "cafes": 20,
+            "parks": 1
+        },
+        "amenity_score": 10.6
+    },
+    "2762.0": {
+        "coordinates": {
+            "lat": -33.6988413,
+            "lon": 150.884654
+        },
+        "amenities": {
+            "schools": 2,
+            "supermarkets": 18,
+            "stations": 3,
+            "cafes": 25,
+            "parks": 3
+        },
+        "amenity_score": 10.2
+    },
+    "2155.0": {
+        "coordinates": {
+            "lat": -33.6956115,
+            "lon": 150.9363173
+        },
+        "amenities": {
+            "schools": 2,
+            "supermarkets": 16,
+            "stations": 0,
+            "cafes": 31,
+            "parks": 2
+        },
+        "amenity_score": 10.200000000000001
+    },
+    "2770.0": {
+        "coordinates": {
+            "lat": -33.759848,
+            "lon": 150.8161142
+        },
+        "amenities": {
+            "schools": 2,
+            "supermarkets": 22,
+            "stations": 4,
+            "cafes": 24,
+            "parks": 3
+        },
+        "amenity_score": 11.000000000000002
+    },
+    "2761.0": {
+        "coordinates": {
+            "lat": -33.7262512,
+            "lon": 150.8508982
+        },
+        "amenities": {
+            "schools": 3,
+            "supermarkets": 15,
+            "stations": 3,
+            "cafes": 11,
+            "parks": 2
+        },
+        "amenity_score": 6.800000000000001
+    },
+    "2147.0": {
+        "coordinates": {
+            "lat": -33.762825,
+            "lon": 150.9344378
+        },
+        "amenities": {
+            "schools": 6,
+            "supermarkets": 22,
+            "stations": 5,
+            "cafes": 24,
+            "parks": 7
+        },
+        "amenity_score": 12.800000000000002
+    },
+    "2767.0": {
+        "coordinates": {
+            "lat": -33.7539772,
+            "lon": 150.8822065
+        },
+        "amenities": {
+            "schools": 6,
+            "supermarkets": 19,
+            "stations": 5,
+            "cafes": 20,
+            "parks": 1
+        },
+        "amenity_score": 10.2
+    },
+    "2766.0": {
+        "coordinates": {
+            "lat": -33.7898441,
+            "lon": 150.8496509
+        },
+        "amenities": {
+            "schools": 2,
+            "supermarkets": 11,
+            "stations": 3,
+            "cafes": 10,
+            "parks": 0
+        },
+        "amenity_score": 5.2
+    },
+    "2760.0": {
+        "coordinates": {
+            "lat": -33.7599522,
+            "lon": 150.7780884
+        },
+        "amenities": {
+            "schools": 2,
+            "supermarkets": 20,
+            "stations": 3,
+            "cafes": 19,
+            "parks": 5
+        },
+        "amenity_score": 9.8
+    },
+    "2146.0": {
+        "coordinates": {
+            "lat": -33.7894233,
+            "lon": 150.9512199
+        },
+        "amenities": {
+            "schools": 7,
+            "supermarkets": 26,
+            "stations": 9,
+            "cafes": 35,
+            "parks": 6
+        },
+        "amenity_score": 16.6
+    },
+    "2747.0": {
+        "coordinates": {
+            "lat": -33.7547074,
+            "lon": 150.751723
+        },
+        "amenities": {
+            "schools": 2,
+            "supermarkets": 16,
+            "stations": 3,
+            "cafes": 24,
+            "parks": 1
+        },
+        "amenity_score": 9.2
+    },
+    "2756.0": {
+        "coordinates": {
+            "lat": -33.5610167,
+            "lon": 150.8243025
+        },
+        "amenities": {
+            "schools": 0,
+            "supermarkets": 2,
+            "stations": 0,
+            "cafes": 8,
+            "parks": 0
+        },
+        "amenity_score": 2.0
+    },
+    "2142.0": {
+        "coordinates": {
+            "lat": -33.8294904,
+            "lon": 151.0134138
+        },
+        "amenities": {
+            "schools": 8,
+            "supermarkets": 47,
+            "stations": 24,
+            "cafes": 134,
+            "parks": 2
+        },
+        "amenity_score": 43.0
+    },
+    "2795.0": {
+        "coordinates": {
+            "lat": -33.413706,
+            "lon": 149.6080457
+        },
+        "amenities": {
+            "schools": 0,
+            "supermarkets": 7,
+            "stations": 0,
+            "cafes": 19,
+            "parks": 1
+        },
+        "amenity_score": 5.4
+    },
+    "2750.0": {
+        "coordinates": {
+            "lat": -33.754315,
+            "lon": 150.6810722
+        },
+        "amenities": {
+            "schools": 1,
+            "supermarkets": 13,
+            "stations": 4,
+            "cafes": 55,
+            "parks": 5
+        },
+        "amenity_score": 15.600000000000001
+    },
+    "2540.0": {
+        "coordinates": {
+            "lat": -35.0269754,
+            "lon": 150.6122904
+        },
+        "amenities": {
+            "schools": 1,
+            "supermarkets": 0,
+            "stations": 0,
+            "cafes": 0,
+            "parks": 0
+        },
+        "amenity_score": 0.2
+    },
+    "2154.0": {
+        "coordinates": {
+            "lat": -33.7413064,
+            "lon": 151.0065563
+        },
+        "amenities": {
+            "schools": 6,
+            "supermarkets": 17,
+            "stations": 0,
+            "cafes": 24,
+            "parks": 0
+        },
+        "amenity_score": 9.400000000000002
+    },
+    "2153.0": {
+        "coordinates": {
+            "lat": -33.7500372,
+            "lon": 150.9914495
+        },
+        "amenities": {
+            "schools": 5,
+            "supermarkets": 21,
+            "stations": 0,
+            "cafes": 36,
+            "parks": 0
+        },
+        "amenity_score": 12.4
+    },
+    "2764.0": {
+        "coordinates": {
+            "lat": -28.5235,
+            "lon": 151.9762
+        },
+        "amenities": {
+            "schools": 0,
+            "supermarkets": 0,
+            "stations": 0,
+            "cafes": 2,
+            "parks": 0
+        },
+        "amenity_score": 0.4
+    },
+    "2168.0": {
+        "coordinates": {
+            "lat": -33.916813,
+            "lon": 150.8796388
+        },
+        "amenities": {
+            "schools": 5,
+            "supermarkets": 19,
+            "stations": 2,
+            "cafes": 43,
+            "parks": 7
+        },
+        "amenity_score": 15.200000000000001
+    },
+    "2726.0": {
+        "coordinates": {
+            "lat": -34.7982591,
+            "lon": 148.3293342
+        },
+        "amenities": {
+            "schools": 0,
+            "supermarkets": 0,
+            "stations": 0,
+            "cafes": 1,
+            "parks": 0
+        },
+        "amenity_score": 0.2
+    },
+    "2567.0": {
+        "coordinates": {
+            "lat": -34.0406219,
+            "lon": 150.7514159
+        },
+        "amenities": {
+            "schools": 1,
+            "supermarkets": 8,
+            "stations": 0,
+            "cafes": 8,
+            "parks": 3
+        },
+        "amenity_score": 4.0
+    },
+    "2145.0": {
+        "coordinates": {
+            "lat": -33.809651,
+            "lon": 150.9758374
+        },
+        "amenities": {
+            "schools": 6,
+            "supermarkets": 42,
+            "stations": 21,
+            "cafes": 117,
+            "parks": 4
+        },
+        "amenity_score": 38.0
+    },
+    "2227.0": {
+        "coordinates": {
+            "lat": -34.0317558,
+            "lon": 151.0841429
+        },
+        "amenities": {
+            "schools": 2,
+            "supermarkets": 15,
+            "stations": 8,
+            "cafes": 60,
+            "parks": 0
+        },
+        "amenity_score": 17.0
+    },
+    "2500.0": {
+        "coordinates": {
+            "lat": -34.4219338,
+            "lon": 150.8904597
+        },
+        "amenities": {
+            "schools": 1,
+            "supermarkets": 7,
+            "stations": 5,
+            "cafes": 46,
+            "parks": 0
+        },
+        "amenity_score": 11.8
+    },
+    "2753.0": {
+        "coordinates": {
+            "lat": -33.6153264,
+            "lon": 150.7047727
+        },
+        "amenities": {
+            "schools": 1,
+            "supermarkets": 5,
+            "stations": 1,
+            "cafes": 14,
+            "parks": 0
+        },
+        "amenity_score": 4.2
+    },
+    "2335.0": {
+        "coordinates": {
+            "lat": -32.641137,
+            "lon": 151.3488596
+        },
+        "amenities": {
+            "schools": 0,
+            "supermarkets": 2,
+            "stations": 1,
+            "cafes": 0,
+            "parks": 0
+        },
+        "amenity_score": 0.6000000000000001
+    },
+    "2771.0": {
+        "coordinates": {
+            "lat": -35.5210113,
+            "lon": 148.1499404
+        },
+        "amenities": {
+            "schools": 0,
+            "supermarkets": 1,
+            "stations": 0,
+            "cafes": 2,
+            "parks": 2
+        },
+        "amenity_score": 1.0
+    },
+    "2092.0": {
+        "coordinates": {
+            "lat": -33.785003,
+            "lon": 151.2410528
+        },
+        "amenities": {
+            "schools": 1,
+            "supermarkets": 19,
+            "stations": 0,
+            "cafes": 147,
+            "parks": 4
+        },
+        "amenity_score": 34.2
+    },
+    "2163.0": {
+        "coordinates": {
+            "lat": -33.8844315,
+            "lon": 150.9750871
+        },
+        "amenities": {
+            "schools": 3,
+            "supermarkets": 20,
+            "stations": 13,
+            "cafes": 35,
+            "parks": 6
+        },
+        "amenity_score": 15.399999999999999
+    },
+    "2167.0": {
+        "coordinates": {
+            "lat": -33.9655387,
+            "lon": 150.8972792
+        },
+        "amenities": {
+            "schools": 3,
+            "supermarkets": 14,
+            "stations": 5,
+            "cafes": 19,
+            "parks": 1
+        },
+        "amenity_score": 8.4
+    },
+    "2661.0": {
+        "coordinates": {
+            "lat": -35.1494349,
+            "lon": 147.2940539
+        },
+        "amenities": {
+            "schools": 1,
+            "supermarkets": 1,
+            "stations": 0,
+            "cafes": 1,
+            "parks": 0
+        },
+        "amenity_score": 0.6000000000000001
+    },
+    "2565.0": {
+        "coordinates": {
+            "lat": -34.0028408,
+            "lon": 150.8554473
+        },
+        "amenities": {
+            "schools": 5,
+            "supermarkets": 12,
+            "stations": 5,
+            "cafes": 9,
+            "parks": 1
+        },
+        "amenity_score": 6.4
+    },
+    "2678.0": {
+        "coordinates": {
+            "lat": -35.0635936,
+            "lon": 147.3547683
+        },
+        "amenities": {
+            "schools": 0,
+            "supermarkets": 2,
+            "stations": 0,
+            "cafes": 3,
+            "parks": 0
+        },
+        "amenity_score": 1.0
+    },
+    "2135.0": {
+        "coordinates": {
+            "lat": -33.8756732,
+            "lon": 151.0895339
+        },
+        "amenities": {
+            "schools": 3,
+            "supermarkets": 47,
+            "stations": 13,
+            "cafes": 107,
+            "parks": 1
+        },
+        "amenity_score": 34.2
+    },
+    "2068.0": {
+        "coordinates": {
+            "lat": -33.8034246,
+            "lon": 151.2034252
+        },
+        "amenities": {
+            "schools": 4,
+            "supermarkets": 56,
+            "stations": 9,
+            "cafes": 261,
+            "parks": 4
+        },
+        "amenity_score": 66.8
+    }
+}

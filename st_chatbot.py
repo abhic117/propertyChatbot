@@ -1,15 +1,16 @@
 import streamlit as st
 import ollama
 import time
+import pandas as pd
+import json
 
-import preprocess_utils
 import retrieval_utils
-import osm_utils
 
-RAW_FILE = "nsw_property_data.csv"
 PROCESSED_FILE = "processed_nsw_property_data.parquet"
+JSON_AMENITY_DATA = "postcode_amenity_data.json"
 
-df = preprocess_utils.load_data(RAW_FILE, PROCESSED_FILE)
+df = pd.read_parquet(PROCESSED_FILE)
+amenity_file = JSON_AMENITY_DATA
 
 # Make text flow
 def stream_data(text, delay:float=0.02):
@@ -27,28 +28,43 @@ if prompt:
 
     # Processing
     with st.spinner("Thinking..."):
-        amenities_text = ''
-        query_intent = retrieval_utils.detect_intent(prompt)
+        amenities = ''
+        score = ''
 
+        query_intent = retrieval_utils.detect_intent(prompt)
+        print(query_intent)
+
+        # Chooses a retrieval method based on the detected intent of the prompt
         match query_intent:
             case 'price': 
                 rows = retrieval_utils.price_query_retrieval(prompt, df)
             case 'amenity':
                 rows = retrieval_utils.amenity_query_retrieval(prompt, df)
 
-                amenities_text = rows.iloc[0]["amenities_text"]
+                with open(amenity_file) as f:
+                    data = json.load(f)
+                postcode = str(rows['post_code'].item())
+                
+                amenities = data[str(postcode)]['amenities']
+                score = data[postcode]['amenity_score']
+
+                print(amenities, score)
 
         context = rows.to_string(index=False)
 
         llm_prompt = f"""
         You are a real estate assistant helping a user with property related questions.
 
-        Answer using only the data provided. 
+        Answer using only the data provided.
+
+        Answer in a human tone, as if you are a human assistant answering customer questions.
 
         DATA:
         {context}
 
-        {amenities_text}
+        {amenities}
+
+        {score}
 
         QUESTION:
         {prompt}
