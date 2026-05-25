@@ -6,8 +6,8 @@ import json
 
 import retrieval_utils
 
-PROCESSED_FILE = "processed_nsw_property_data.parquet"
-JSON_AMENITY_DATA = "postcode_amenity_data.json"
+PROCESSED_FILE = "data/processed_nsw_property_data.parquet"
+JSON_AMENITY_DATA = "data/postcode_amenity_data.json"
 
 df = pd.read_parquet(PROCESSED_FILE)
 amenity_file = JSON_AMENITY_DATA
@@ -43,12 +43,14 @@ if prompt:
 
                 with open(amenity_file) as f:
                     data = json.load(f)
-                postcode = str(rows['post_code'].item())
-                
-                amenities = data[str(postcode)]['amenities']
-                score = data[postcode]['amenity_score']
 
-                print(amenities, score)
+                postcodes = rows['post_code'].tolist()
+
+                amenities = []
+                scores = []
+                for postcode in postcodes:
+                    amenities.append(data[str(postcode)]['amenities'])
+                    scores.append(data[str(postcode)]['amenity_score'])
 
         context = rows.to_string(index=False)
 

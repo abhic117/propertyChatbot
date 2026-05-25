@@ -31,7 +31,7 @@ def price_query_retrieval(question, df, max_rows=20):
     return df.head(max_rows)
 
 # Retrieval method suited for amenity searches
-def amenity_query_retrieval(question, df, max_rows=1):
+def amenity_query_retrieval(question, df, max_rows=5):
     noise_words = {'what', 'the', 'is', 'in', 'of', 'at'}
 
     keywords = [kw for kw in question.lower().split() if kw not in noise_words]
