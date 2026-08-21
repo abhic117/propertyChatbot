@@ -157,7 +157,7 @@ Location based queries are answered by retrieving information from the postcode 
 
 ## Contact
 
-Abhishek Chand - (https://twitter.com/twitter_handle) - AbhishekC117@hotmail.com
+Abhishek Chand - AbhishekC117@hotmail.com
 
 Project Link: [https://github.com/abhic117/propertyChatbot](https://github.com/abhic117/propertyChatbot)
 
