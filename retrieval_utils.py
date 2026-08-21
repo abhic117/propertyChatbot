@@ -36,11 +36,11 @@ def amenity_query_retrieval(question, df, max_rows=5):
 
     keywords = [kw for kw in question.lower().split() if kw not in noise_words]
 
-    # Sort df by relevancy to prompt, then keep the first 50 rows
+    # Sort df by relevancy to prompt, then keep the first 20 rows
     scores = df["search_text"].apply(lambda text: sum(kw in text for kw in keywords))
     df = df.assign(score=scores).query("score > 0").sort_values("score", ascending=False).head(20)
 
-    # Sort df by postcode frequency, then keep first row
+    # Sort df by postcode frequency, then keep first 5 rows
     df = df.sort_values("post_code", key=lambda x: x.map(x.value_counts()), ascending=False).head(max_rows)
 
     
