@@ -73,7 +73,8 @@ if prompt:
         """
 
         result = ollama.chat(
-            model="qwen2.5:7b-instruct-q4_K_M",
+            # model="qwen2.5:7b-instruct-q4_K_M",
+            model="gpt-oss:20b-cloud",
             messages=[{"role": "user", "content": llm_prompt}]
         )
         st.write(stream_data(result["message"]["content"]))
