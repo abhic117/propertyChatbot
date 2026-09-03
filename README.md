@@ -32,7 +32,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Startup-Searcher</h3>
+<h3 align="center">Property Chatbot</h3>
 
   <p align="center">
      A RAG powered AI chatbot for property related queries
